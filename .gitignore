@@ -30,3 +30,5 @@ bower_components
 
 # Users Environment Variables
 .lock-wscript
+
+redis-3.2.1
