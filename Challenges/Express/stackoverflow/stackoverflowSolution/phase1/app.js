@@ -1,6 +1,9 @@
 var express = require('express');
 var path = require('path');
 var routes = require('./routes/index');
+var questionRoutes= require('./routes/questions');
+var searchRoutes= require('./routes/search');
+var bodyParser= require('body-parser');
 
 var app = express();
 
@@ -8,12 +11,15 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(bodyParser.urlencoded({extended:false}));
 app.get("/",function(req,res,next){
   res.locals.hideContent=true;
   next();
 });
 
 app.use('/', routes);
+app.use('/questions',questionRoutes);
+app.use('/search',searchRoutes);
 
 
 

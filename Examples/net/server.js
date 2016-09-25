@@ -17,9 +17,9 @@ var server= net.createServer(function(socket){
             }else{
                 client.write("command executed\n");
             }
-        })  
+        })
     });
 
 });
-
+console.log(__dirname);
 server.listen(3003);

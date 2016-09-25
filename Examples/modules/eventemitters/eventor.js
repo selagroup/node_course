@@ -2,7 +2,7 @@ var eventEmitter = require('events').EventEmitter;
 
 module.exports.eventor =function(){
 
-	e=new eventEmitter();
+	var e=new eventEmitter();
 
 	setTimeout(function(){
 		e.emit("start","i am eventor...");

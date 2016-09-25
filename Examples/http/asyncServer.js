@@ -6,27 +6,35 @@ var options = {
     method: 'GET'
 };
 
+
 // handling incoming HTTP requests
 var handleRequests = function(req,res){
 
-    // creating an outgoing HTTP request
-    req = http.request(options, function(response) {
-
-        var str = "";
-        response.on('data', function (chunk) {
-            str += chunk;
+    var request=http.request(options,function(response){
+        var str='';
+        response.on('data',function(chunk){
+            str+=chunk;
         });
 
-        response.on('end', function(){
-            res.writeHead(200, {
-                'content-type': 'application/json'
-
-            })
+        response.on('end',function(){
+            res.writeHead(200,{'content-type':'application/json',
+                'connection':'close'});
             res.end(str);
         });
 
     });
-    req.end();
+    request.end();
 };
-http.createServer(handleRequests).listen(3000);
-console.log('listening on 3000');
+var server=http.createServer().listen(8080);
+
+server.on('connection',function(){
+    console.log('new connection');
+})
+server.on('request',handleRequests);
+server.on('listening',function(){
+    console.log('listening...');
+})
+
+
+
+

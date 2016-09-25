@@ -1,0 +1,16 @@
+{
+  "name": "3_respawn",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "colors": "^1.0.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+    "start-reload":"nodemon app.js"  
+  },
+  "author": "",
+  "license": "ISC"
+}

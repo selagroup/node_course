@@ -1,20 +1,29 @@
 var express = require('express');
 var path = require('path');
-var bodyParser=require("body-parser")
+var bodyParser=require("body-parser");
+var Session  = require("express-session");
+var RedisStore = require("connect-redis")(Session);
 
 var routes = require("./routes/index");
-var taskRoutes=require("./routes/tasksDb");
+var taskRoutes=require("./routes/tasks");
 var app = express();
 
 app.set("view engine","jade");
 app.set("views",path.join(__dirname,"views"));
 
+app.use(Session({store:new RedisStore(),secret:'expressApp'}));
+app.use(function(req,res,next){
+  req.session.date = req.session.date || new Date().toUTCString();
+  res.locals.session = { id:req.session.id, date:req.session.date };
+  next();
+})
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname,"public")));
 app.use(express.static(path.join(__dirname,"bower_components")));
 app.use("/",routes);
 app.use("/tasks",taskRoutes);
+
 
 // app.use(function(req,res,next){
 //   res.send("Hello Express");

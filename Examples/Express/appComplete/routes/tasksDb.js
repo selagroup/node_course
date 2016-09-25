@@ -25,7 +25,7 @@ router.post("/",function(req,res){
 
 router.post("/setCompleted",function(req,res){
 	var completed=req.body.completed ==='true' ? true : false;
-	service.setCompleted(req.body.id,completed).then(function(){
+    service.setCompleted(req.body.id,completed).then(function(){
         res.send({success:true,completed:completed});
     })
 	

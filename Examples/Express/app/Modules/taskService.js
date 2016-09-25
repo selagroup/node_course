@@ -1,21 +1,28 @@
-var Task=function(title,completed){
-	this.title=title;
-	this.completed=completed
-	;
+'use strict';
+
+class Task{
+    constructor(title,completed){
+        this.title=title;
+        this.completed=completed;
+    }
 }
-var tasksCollection=[
-	new Task("Take out the trash"),
-	new Task("Buy some milk",true),
-	new Task("Pay electric bill")
+
+var Tasks=[
+    new Task('Take out trash',true),
+    new Task('learn Express',false),
+    new Task('Do Homework',false)
 ]
+
 module.exports.getTasks=function(){
-	return tasksCollection;
+    return Tasks;
 }
-module.exports.addTask=function(title,completed){
-	tasksCollection.push(new Task(title,completed));
+
+module.exports.createTask=function(title,completed){
+    Tasks.push(new Task(title,completed))
 }
+
 module.exports.setCompleted=function(title,completed){
-	tasksCollection.forEach(function(element, index){
+	Tasks.forEach(function(element, index){
 		if(title===element.title){
 			element.completed=completed;
 		}

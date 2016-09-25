@@ -2,11 +2,9 @@ var fs = require('fs');
 
 var filePath = process.argv[2];
 
-
-
 fs.stat(filePath,function(err,stats){
     if(err){
-        return console.log("File not found");
+        return console.log(err);
     }
     if(stats.isDirectory()){
         return console.log("No file in path");
@@ -17,5 +15,3 @@ fs.stat(filePath,function(err,stats){
     stream.pipe(process.stdout);
 
 });
-
-

@@ -11,7 +11,16 @@ var server = http.createServer(function(req, res){
         'Request path: ' + parsed.pathname + '\n' +
         'name: ' + query.name + '\n' +
         'Id: ' + query.id + '\n' +
-        'conf: ' +query.conf
+        'conf: ' +query.conf + '\n';
+        var body;
+        req.on('data',function(data){
+          body+=data;
+        })
+        req.on('end',function(){
+          resStr+='body: ' + body;
+        })
+
+
 
     res.writeHead(200,
         {
@@ -23,4 +32,4 @@ var server = http.createServer(function(req, res){
 
 });
 
-server.listen(3000);
+server.listen(8000);

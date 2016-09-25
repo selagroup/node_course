@@ -14,7 +14,7 @@ html
                     li
                         a(href="/questions") Questions
                     li
-                        form.navbar-form.navbar-right
+                        form.navbar-form.navbar-right(action="/search",method="POST")
                             div.form-group
                                 input.form-control(placeholder="Search",type="text",name="q",value=q)
                             button.btn.btn-default(type="submit") Submit

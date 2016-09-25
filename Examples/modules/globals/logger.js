@@ -1,6 +1,7 @@
 var moment = require('moment');
 var colors = require('colors');
 
+global.a='Variable A'
 global.prefix="==>"
 exports.log = function(msg){
     console.log(format(msg).green);

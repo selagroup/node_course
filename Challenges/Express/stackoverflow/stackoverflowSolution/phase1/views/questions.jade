@@ -5,7 +5,16 @@ extends layout
 block header
    h2=  "Node.JS Questions"
 block content
+    div.container
+        ul.list-group
+            each item in data.items
+                li.list-item
+                    a(href=item.link, target="_blank") #{item.title}
 block pager
+    div.container
+        a(href="?page="+(curPage+1)) next
+        a(href="?page="+(curPage-1)) prev
+
 
 
 

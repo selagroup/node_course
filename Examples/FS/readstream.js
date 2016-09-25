@@ -13,8 +13,8 @@ var strm2 = fs.createReadStream(Path.join(__dirname,process.argv[2]));
 strm2.setEncoding('utf8');
 
 strm1.on('data', function(data) {
-    console.log('read from strm1'.red);
-});
+      console.log('read from strm1'.red);
+  });
 
 strm1.on('end', function(){
 	console.log('ended strm1')

@@ -1,5 +1,4 @@
 var http = require('http');
-
 var options = {
     host: 'api.icndb.com',
     path: '/jokes/random',
@@ -19,7 +18,9 @@ var handleRequests = function(req,res){
 
         response.on('end', function(){
             res.writeHead(200, {
-                'content-type': 'application/json'
+                'content-type': 'application/json',
+                'connection':'close'
+
             })
             res.end(str);
         });
@@ -36,6 +37,6 @@ var connectionHandler=function(socket){
 server.on('connection',connectionHandler);
 server.on('request',handleRequests);
 server.on('listening',function(){
-    console.log('started listening on 3000');
+    console.log('started listening on 3030');
 })
-server.listen(3000)
+server.listen(3030)
