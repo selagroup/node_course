@@ -12,7 +12,7 @@ var handleRequests = function(req,res){
     // creating an outgoing HTTP request
     var req2 = http.request(options, responseCallback = function(response) {
 
-        res.writeHead(200, {'content-type': 'text/xml', 'Content-Encoding':'gzip'})
+        res.writeHead(200, {'content-type': 'text/xml'})
         // response.on('data', function (chunk) {
         //      res.write(chunk);
         //  });
