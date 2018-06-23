@@ -24,7 +24,7 @@
 			},
 			"response": [
 				{
-					"id": "23e58e2b-33d1-422f-bbf2-1a10e682939f",
+					"id": "60caa5b0-8fe4-485c-ae59-405643c654f9",
 					"name": "Get All Movies",
 					"originalRequest": {
 						"method": "GET",
@@ -124,20 +124,20 @@
 				"header": [],
 				"body": {},
 				"url": {
-					"raw": "localhost:3000/movies/45",
+					"raw": "localhost:3000/movies/6",
 					"host": [
 						"localhost"
 					],
 					"port": "3000",
 					"path": [
 						"movies",
-						"45"
+						"6"
 					]
 				}
 			},
 			"response": [
 				{
-					"id": "95d6a61e-9f39-4c88-9526-1b626381a9cd",
+					"id": "88ed0dd1-b935-4329-bb1a-9e3543285419",
 					"name": "Get one movie",
 					"originalRequest": {
 						"method": "GET",
@@ -345,7 +345,7 @@
 		{
 			"name": "Delete movie",
 			"request": {
-				"method": "PUT",
+				"method": "DELETE",
 				"header": [
 					{
 						"key": "Content-Type",
