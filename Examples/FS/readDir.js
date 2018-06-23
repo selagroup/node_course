@@ -2,6 +2,7 @@ var fs = require('fs');
 var Path = require('path');
 var colors = require('colors');
 
+
 fs.readdir(process.argv[2],function(err,files){
     if(err){
         console.log('An Error has occured');
