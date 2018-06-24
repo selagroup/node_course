@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const createError = require('http-errors');
-const service = require('../services/movieService');
+const service = require('../services/movieServiceDB');
 const paging = require('../middlewares/pagingMiddleware');
 const movieModel = require('../models/movieModel');
 const { check, validationResult } = require('express-validator/check');
@@ -9,21 +9,23 @@ router.use(paging());
 router.get('/:id', async (req,res,next) => {    
     
     try { 
-        res.send(await service.getOne(parseInt(req.params['id'])));
+        res.send(await service.getOne(req.params['id']));
     } catch (error) {
         next(createError(404));
     }
 });
 
 router.put('/:id', async (req,res,next) => {
-    
-    res.send(await service.update(parseInt(req.params.id),req.body));
+    try {
+        res.send(await service.update(req.params.id,req.body)); 
+    } catch (error) {
+        next(createError(422));
+    }
 });
 
 router.delete('/:id', async (req,res,next) => {
     
-    
-    res.send(await service.remove(parseInt(req.params.id)));
+    res.send(await service.remove(req.params.id));
 });
 router.get('/', async (req,res,next) => {
     

@@ -2,7 +2,7 @@ const db = require('../mocks/movies.json');
 
 const movies = db.movies;
 
-const byId = (id) => (movie) => movie.id === id; 
+const byId = (id) => (movie) => movie.id == id; 
 
 function get(page=1, pageSize=10){
     
