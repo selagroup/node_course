@@ -4,8 +4,16 @@ const service = require('../services/movieServiceDB');
 const paging = require('../middlewares/pagingMiddleware');
 const movieModel = require('../models/movieModel');
 const { check, validationResult } = require('express-validator/check');
+const passport = require('passport');
 
 router.use(paging());
+router.use(passport.authenticate('jwt',{session:false}),(req,res,next) => {
+    if(!req.user){
+       return next(createError(401));
+    }
+
+    return next();
+})
 router.get('/:id', async (req,res,next) => {    
     
     try { 
