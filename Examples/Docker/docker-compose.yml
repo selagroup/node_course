@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+  mongodb:
+    image: mongo
+    networks:
+      - nodeapp-network
+  
+  moviesapi:
+    build:
+      context: ../Express/moviesApi
+      dockerfile: Dockerfile
+    ports:
+      - "8080:3000"
+    networks:
+      - nodeapp-network
+  auth:
+    build:
+      context: ../Auth
+      dockerfile: Dockerfile
+    ports:
+      - "8081:3000"
+    networks:
+      - nodeapp-network
+
+
+networks:
+  nodeapp-network:
+    driver: bridge

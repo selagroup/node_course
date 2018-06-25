@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
 const col = require('../models/mongoose/movieSchema')
 
-const db = mongoose.connect('mongodb://localhost:27017/movies');
+const MONGO_HOST  = process.env.NODE_ENV === 'production' ? 'mongodb' : 'localhost';
+const db = mongoose.connect(`mongodb://${MONGO_HOST}:27017/movies`);
 
 const movieSchema = col.schema;
 const MovieModel = col.model;

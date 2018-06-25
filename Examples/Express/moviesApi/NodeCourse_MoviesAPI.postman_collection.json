@@ -24,7 +24,7 @@
 			},
 			"response": [
 				{
-					"id": "814accbc-5b29-43be-b256-1c8c82dbf21c",
+					"id": "e5a161d0-8318-409e-b1f6-6dcc95d1c85c",
 					"name": "Get All Movies",
 					"originalRequest": {
 						"method": "GET",
@@ -146,7 +146,7 @@
 			},
 			"response": [
 				{
-					"id": "566e2f6a-7346-4580-a5cc-7b53a81bdc43",
+					"id": "d5d8e5a1-34eb-4cf2-bc0a-0795c718f495",
 					"name": "Get All Movies",
 					"originalRequest": {
 						"method": "GET",
@@ -259,7 +259,7 @@
 			},
 			"response": [
 				{
-					"id": "3ee3da76-5bdd-46df-a3d1-0f67649c684c",
+					"id": "c4eccda2-a753-4d40-abe2-29baaec41ded",
 					"name": "Get one movie",
 					"originalRequest": {
 						"method": "GET",
@@ -355,6 +355,33 @@
 		},
 		{
 			"name": "Post - create new movie",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"title\":\"Frozen\",\n\t\"year\":2013,\n\t\"poster\":\"http://wwww.someimages.com\"\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/movies",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"movies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post - create new movie with Auth",
 			"request": {
 				"method": "POST",
 				"header": [
@@ -520,7 +547,7 @@
 			},
 			"response": [
 				{
-					"id": "133c75c4-2ca2-4fef-aeea-99b0b4a8839b",
+					"id": "c7d6299a-db69-471d-ad82-9229182b761a",
 					"name": "login",
 					"originalRequest": {
 						"method": "POST",
