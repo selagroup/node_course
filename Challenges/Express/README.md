@@ -79,4 +79,4 @@ function remove(id){
 module.exports ={ get, getOne, create, update, remove }
 
 ``` 
-6. you should proper error handling and data validation (using the express-validator middleware) for the appropriate end points.
+6. you should implement proper error handling and data validation (using the express-validator middleware) for the appropriate end points.
