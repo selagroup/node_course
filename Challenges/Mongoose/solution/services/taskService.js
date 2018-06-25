@@ -14,7 +14,7 @@ function get(){
 
 function getOne(id){
     return TaskModel.findById(id).exec();
-}
+}   
 
 function create(task){
     let taskModel = new TaskModel(task);
