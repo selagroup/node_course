@@ -1,6 +1,6 @@
 # Express + Mongoose Challenge
 
-In this challenge you will refactor the app created in previous [Express](Express) Challenge 
+In this challenge you will refactor the app created in previous [Express](../Express) Challenge 
 
 1. First you will need a mongo db instance, for this we will use docker. make sure you have docker installed on your machine. open your Terminal and run the following commands
 ``` bash
