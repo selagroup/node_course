@@ -5,4 +5,4 @@
 3. [Modules](Modules)
 4. [Async](async)
 5. [Express](Express)
-6. [Express + Mongoose](mongoose)
+6. [Express + Mongoose](Mongoose)
