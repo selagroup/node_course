@@ -12,30 +12,3 @@ let zipFileName = path.basename(file,path.extname(file))+'.gz';
 console.log(zipFileName);
 
 
-
-// let strm1 = fs.createReadStream(file)
-// let zipStream = zlib.createGzip();
-// let zipFileStream = fs.createWriteStream(zipFileName);
-
-// strm1
-//     .on('data',(buffer)=>{
-//         zipStream.write(buffer);
-//     })
-//     .on('end',()=>{
-//         zipStream.end();
-//     });
-
-// zipStream.on('data',(buffer)=>{
-//     zipFileStream.write(buffer);
-// })
-// .on('end',()=>{
-//     zipFileStream.end();
-// });
-
-//piped version
-fs.createReadStream(file)
-    .pipe(zlib.createGzip())
-    .pipe(fs.createWriteStream(zipFileName))
-    .on('finish', () => console.log(`File  successfully compressed`));
-
-
