@@ -31,5 +31,11 @@ networks:
     -create a network:
         docker network create app-network
     - run the movie-api demo with mongo.
+        docker run -p 27017:27017 --net=app-network --name=mongodb mongo
+        docker run --net=app-network --name api-app -p 3001:3000 nirn/movies-api2-withnet
+
+docker compose:
+
+
 
 
