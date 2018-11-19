@@ -1,0 +1,35 @@
+Basics:
+--------------
+run:
+    - show images: docker images
+    - run hello-world: docker run hello-world
+    - show running container: docker ps
+    - show example with kitematic/hello-world-ngnx:
+        docker pull kitematic/hello-world-nginx
+        docker run -p 80:80 kitematic/hello-world-nginx
+    - show stoping and removing containers:
+        docker stop container_id
+        docker rm container_id
+
+data volumes:
+    - run the express demo built in previous demos:
+        docker pull node
+        cd into the express app folder
+        docker run -p 3000:3000 -v $(pwd):/var/www node (will not work, because need to actually run the app with node)
+    - show volume with docker inspect
+        docker inspect container_id
+        docker run -p 3000:3000 -v $(pwd):/var/www node npm start
+            (also will not work, because we need to setup working directory for running commands, inside container)
+        docker run -p 3000:3000 -v $(pwd):/var/www -w "/var/www" node npm start
+
+docker files:
+    - create a docker file for the express app.
+      docker built -t owner/name
+      docker run imageName
+
+networks:
+    -create a network:
+        docker network create app-network
+    - run the movie-api demo with mongo.
+
+
