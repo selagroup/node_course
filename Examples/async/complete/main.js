@@ -39,8 +39,8 @@ const dirPath = path.resolve(path.resolve('../../'));
 //
 // }());
 
-const directoryStats = new DirectoryStats(dirPath);
+// const directoryStats = new DirectoryStats(dirPath);
 
-directoryStats.on('started',()=>console.log('started reading directory'));
-directoryStats.on('file',console.log );
-directoryStats.on('end',console.log);
+// directoryStats.on('started',()=>console.log('started reading directory'));
+// directoryStats.on('file',console.log );
+// directoryStats.on('end',console.log);
