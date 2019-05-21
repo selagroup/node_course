@@ -5,7 +5,7 @@ In this challenge you will refactor the app created in previous [Express](../Exp
 1. First you will need a mongo db instance, for this we will use docker. make sure you have docker installed on your machine. open your Terminal and run the following commands
 ``` bash
 $ docker pull mongo 
-$ docker run mongo -p 27017:27017
+$ docker run -p 27017:27017 mongo 
 
 ```
 if docker is unavailable you can create a mongo database in mLab.
